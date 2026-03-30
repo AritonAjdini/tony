@@ -18,5 +18,6 @@ def main():
     print("------  ------------------ -------------------- --------------------")
     width1=2; 
     print("\n".join(str(x).center(width1) for x in Interval))
+    
 if __name__ == "__main__":
     main()

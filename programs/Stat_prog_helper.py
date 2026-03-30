@@ -1,13 +1,12 @@
 from math import sqrt
 #Input array data and save in seperate txt file
 def inp(data, n):
-    i=1
-    file=open("array_data.txt","a")
-    for value in range(n):
+    i=0
+    file=open("tony/programs/array_data.txt","a")
+    for i in range(n):
         temp = int(input(f"Input for element {i}:\n"))
         data.append(temp)
         file.write(f"{temp}\n")
-        i+=1
     file.write(f"Arr Data Line\n")
     file.close()
 
@@ -34,5 +33,46 @@ def class_ranges(Min, L, K):
         start = end
     return ranges
 
-def Abs_freq_count(ranges, ):
-    ab_freq_arr
+def Abs_freq_inp(ranges):
+    Freq_arr = []
+    n = ranges.len()
+    i=0
+    for i in range(n):
+        temp = int(input(f"Input for element {i}:\n"))
+        Freq_arr.append(temp)
+    return Freq_arr
+ 
+def Rangeavg(ranges, Freq_arr):
+    RngAvg = []
+    count=0
+    j=0
+    for i in ranges:
+        if(isinstance(ranges[i], int)):
+            count+=1
+            if(count==2):
+                count = 0
+                RngAvg[j] = (ranges[i]+temp)/2
+                j+=1
+            temp = ranges[i]
+    return RngAvg
+    
+def XofIntervalMultNoStudent(ranges, Freq_arr):
+    rngavg=Rangeavg(ranges, Freq_arr)
+    n = ranges.len()
+    xmultf = []
+    for i in range(n):
+        xmultf[i] = ranges[i]*rngavg[i]
+    return xmultf
+
+def ArthmtcAvg(sFreq, SfrqmultNoStudent):
+    return SfrqmultNoStudent/sFreq
+
+
+
+            
+
+        
+
+
+
+    

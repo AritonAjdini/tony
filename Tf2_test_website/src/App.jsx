@@ -1,8 +1,7 @@
 import './App.css'
-
-// import { Tabbleadder } from './Elements'
+import { Tabbleadder } from './Elements'
 export default function App() {
-  
+    Tabbleadder();
     return(
     <div className="gridbox">
     <img src="src/assets/TF2_Icon.svg" className='floating'/>
@@ -13,8 +12,8 @@ export default function App() {
                 <input name="Steamid" type="text" placeholder="SteamId" className="inpcss" id="second"/>
             </div>
             <div id="buttons">
-                <button className="btn" id="insert">Insert</button>
-                <button className="btn" id="delete">Delete</button>
+                <button className="btn" id="insert" data-tooltip="Insert the Username and SteamId">Insert</button>
+                <button className="btn" id="delete" data-tooltip="Delete the elements of the table">Delete</button>
             </div>
         </div>
   
@@ -26,10 +25,7 @@ export default function App() {
               </tr>
            </thead>
            <tbody>
-               <tr>
-                   <td>Name</td>
-                   <td>SteamID</td>
-              </tr>
+               
            </tbody>
         </table>
         </div>

@@ -1,7 +1,6 @@
 import './App.css'
 import { Tabbleadder } from './Elements'
 export default function App() {
-    Tabbleadder();
     return(
     <div className="gridbox">
     <img src="src/assets/TF2_Icon.svg" className='floating'/>
@@ -18,14 +17,14 @@ export default function App() {
         </div>
   
        <table>
-             <thead>
+            <thead>
               <tr>
                    <th id="firsthd">Name</th>
                    <th id="scndhd">SteamID</th>
               </tr>
            </thead>
            <tbody>
-               
+               <Tabbleadder/>
            </tbody>
         </table>
         </div>

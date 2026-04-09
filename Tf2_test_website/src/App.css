@@ -73,7 +73,7 @@ input:focus{
 button::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: 120%;
+  top: 120%;
   left: 50%;
   transform: translateX(-50%);
   
@@ -88,7 +88,6 @@ button::after {
   white-space: nowrap;
 }
 
-/* show on hover */
 button:hover::after {
   opacity: 1;
 }

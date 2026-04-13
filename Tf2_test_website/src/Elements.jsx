@@ -1,6 +1,4 @@
 export const Tabbleadder = () => {
-    const frst = document.getElementById("first")?.value;
-    const scnd = document.getElementById("second")?.value;
 
     const valid = frst && scnd;
 
@@ -16,4 +14,4 @@ export const Tabbleadder = () => {
             </td>
         </tr>
     );
-};
+}; 

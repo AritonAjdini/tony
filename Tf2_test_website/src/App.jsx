@@ -7,8 +7,8 @@ export default function App() {
         <div>
             <div id="inputs">
                 <h1>TF2 User Database</h1>
-                <input name="username" type="text" placeholder="Name of User" className="inpcss" id="first"/>
-                <input name="Steamid" type="text" placeholder="SteamId" className="inpcss" id="second"/>
+                <input name="username" type="text" placeholder="Name of User" className="inpcss" id="first" const />
+                <input name="Steamid" type="number" placeholder="SteamId" className="inpcss" id="second"/>
             </div>
             <div id="buttons">
                 <button className="btn" id="insert" data-tooltip="Insert the Username and SteamId">Insert</button>
@@ -28,7 +28,8 @@ export default function App() {
            </tbody>
         </table>
         </div>
-    )    
+    )
+        
 }
 
 

@@ -7,7 +7,7 @@ const RegExValidInputs = {
 {/*Only Usernames with atleast 3 characters and upto 16 are allowed*/}
 {/*SteamID accepts only number strings of 17 numbers*/}
 
-export const Inputfield=()=>{
+export const Inputfield=({type})=>{
    const [InputValue, setInputValue] = useState('');
     const [Error, setError] = useState('');
 
@@ -51,27 +51,49 @@ export const Tabbleinput = ({id}) => {
    const [formData, setFormData] = useState({ Username: "", SteamID: "" });
    const [rows, setRows] = useState([]);
 
-const Addrows = () => {
+   // This runs every time the component renders
+  const isUsernameValid = RegExValidInputs.username.test(formData.Username);
+  const isSteamIDValid = RegExValidInputs.steamIdentification.test(formData.SteamID);
+   // The buttons should be DISABLED if Username is invalid OR SteamID is invalid
+   const isInvalid = !isUsernameValid || !isSteamIDValid;
 
-  return rows.map((row, index) => (
-    <tr key={index}>
-      <td>{row.Username}</td>
-      <td>{row.SteamID}</td> 
-    </tr>
-  ));
-};
-    return (
+ 
+   const handleChange = (e) => {
+    const buttonId = e.target.id; // Correct way to get the ID
+    
+    if (buttonId === "insert") {
+      // 2. Use the correct property names from your state
+      if (formData.Username && formData.SteamID) {
+        setRows(prevRows => [...prevRows, formData]);
+        setFormData({ Username: "", SteamID: "" }); // Reset
+      }
+    } else if (buttonId === "delete") {
+      setRows([]); // Clear the table
+    }
+  };
+
+ const handleAddRow = ({id}) => {
+   if(id==="insert"){
+      if (formData.name && formData.role) {
+         setRows(prevRows => [...prevRows, formData]);
+         setFormData({ name: "", role: "" }); 
+       }
+   }
+  
+ };
+
+ return (
    <div className="gridbox">
       <img src="src/assets/TF2_Icon.svg" className='floating'/>
           <div>
             <div id="inputs">
                 <h1>TF2 User Database</h1>
-                <Tabbleinput type="text"/>
-                <Tabbleinput type="number"/>
+                <Inputfield type="text" value={formData.Username} onChange={handleChange}/>
+                <Inputfield type="number" value={formData.SteamID} onChange={handleChange}/>
             </div>
             <div id="buttons">
-                <button className="btn" id="insert" data-tooltip="Insert the Username and SteamId">Insert</button>
-                <button className="btn" id="delete" data-tooltip="Delete the elements of the table">Delete</button>
+                <button onClick={handleAddRow} style={{ opacity: isInvalid ? 0.5 : 1, cursor: isInvalid ? 'not-allowed' : 'pointer' }} className="btn" id="insert" data-tooltip="Insert the Username and SteamId">Insert</button>
+                <button onClick={handleAddRow} style={{ opacity: isInvalid ? 0.5 : 1, cursor: isInvalid ? 'not-allowed' : 'pointer' }} className="btn" id="delete" data-tooltip="Delete the elements of the table">Delete</button>
             </div>
          </div>  
        <table>

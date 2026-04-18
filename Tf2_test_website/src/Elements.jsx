@@ -46,3 +46,10 @@ export const Tabbleinput = ({type}) => {
         </div>
     );
 }; 
+
+export const Tabblebuttons=({id})=>{
+   const [Click, setClick] = useState('');
+   const ClickChange=(ev)=>{
+      {OnClick}
+   }
+}

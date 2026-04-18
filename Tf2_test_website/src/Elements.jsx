@@ -7,8 +7,8 @@ const RegExValidInputs = {
 {/*Only Usernames with atleast 3 characters and upto 16 are allowed*/}
 {/*SteamID accepts only number strings of 17 numbers*/}
 
-export const Tabbleinput = ({type}) => {
-    const [InputValue, setInputValue] = useState('');
+export const Inputfield=()=>{
+   const [InputValue, setInputValue] = useState('');
     const [Error, setError] = useState('');
 
     let IsUsrnm = RegExValidInputs.username
@@ -45,11 +45,48 @@ export const Tabbleinput = ({type}) => {
              {!Error && InputValue && <p style={{ color: 'green', fontSize: '15px', position: "center" }}>Looking good!</p>}
         </div>
     );
+}
+   
+export const Tabbleinput = ({id}) => {
+   const [formData, setFormData] = useState({ Username: "", SteamID: "" });
+   const [rows, setRows] = useState([]);
+
+const Addrows = () => {
+
+  return rows.map((row, index) => (
+    <tr key={index}>
+      <td>{row.Username}</td>
+      <td>{row.SteamID}</td> 
+    </tr>
+  ));
+};
+    return (
+   <div className="gridbox">
+      <img src="src/assets/TF2_Icon.svg" className='floating'/>
+          <div>
+            <div id="inputs">
+                <h1>TF2 User Database</h1>
+                <Tabbleinput type="text"/>
+                <Tabbleinput type="number"/>
+            </div>
+            <div id="buttons">
+                <button className="btn" id="insert" data-tooltip="Insert the Username and SteamId">Insert</button>
+                <button className="btn" id="delete" data-tooltip="Delete the elements of the table">Delete</button>
+            </div>
+         </div>  
+       <table>
+            <thead>
+              <tr>
+                   <th id="firsthd">Name</th>
+                   <th id="scndhd">SteamID</th>
+              </tr>
+            </thead>
+            <tbody>
+               <Addrows/>
+            </tbody>
+        </table>
+    </div> 
+    )  
 }; 
 
-export const Tabblebuttons=({id})=>{
-   const [Click, setClick] = useState('');
-   const ClickChange=(ev)=>{
-      {OnClick}
-   }
-}
+

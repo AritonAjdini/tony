@@ -16,10 +16,10 @@
 
 @keyframes roam {
   0%   { top: 0%;  left: -8%; }
-  20%  { top: 15%; left: 80%; }
-  40%  { top: 72%; left: 60%; }
+  20%  { top: 15%; left: 85%; }
+  40%  { top: 80%; left: 60%; }
   60%  { top: 59%; left: -8%; }
-  80%  { top: 50%;  left: 80%; }
+  80%  { top: 50%;  left: 85%; }
   100% { top: 0%; left: -8% }
 }
 img{
@@ -35,7 +35,8 @@ img{
 .inpcss{
     display: block;
     height: 40px;
-    width: 400px;
+    min-width: 400px;
+    width: 100%;
     margin-bottom: 2%;
     border-radius: 2%;
     border-width: 2px;
@@ -96,6 +97,7 @@ table{
   position: relative;
   background-color: rgba(224, 196, 147, 0.596);
   padding: 1%;
+  margin-right: 10%
 }
 
 td, th, h1 {
@@ -133,3 +135,4 @@ td:hover, th:hover {
 #scndhd{
   border-top-right-radius: 5%;
 }
+

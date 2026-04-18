@@ -82,7 +82,12 @@ const Addrows = () => {
               </tr>
             </thead>
             <tbody>
-               <Addrows/>
+               {rows.map((row, index) => (
+                   <tr key={index}>
+                       <td>{row.Username}</td>
+                       <td>{row.SteamID}</td> 
+                   </tr>
+               ))}
             </tbody>
         </table>
     </div> 

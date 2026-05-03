@@ -85,15 +85,15 @@ export const Inputfield = (props) => {
     const handleInternalChange = (ev) => {
         const val = ev.target.value;
         
-        // 1. Run local validation for the red text messages
+        
         if (props.name === "Username") {
             RegExValidInputs.username.test(val) 
                 ? setLocalError("") 
-                : setLocalError("3-16 characters allowed!");
+                : setLocalError("Only Usernames with atleast 3 characters and upto 16 are allowed!");
         } else {
             RegExValidInputs.steamIdentification.test(val) 
                 ? setLocalError("") 
-                : setLocalError("Must be exactly 17 digits!");
+                : setLocalError("SteamID accepts only number strings of 17 digits!");
         }
 
         // 2. CRITICAL: Send the data up to the Parent's ChangeOnActions
@@ -118,17 +118,3 @@ export const Inputfield = (props) => {
     );
 }
 
-export const Btns = (props) => {
-    return (
-        <>
-            <button 
-                className="btn" 
-                onClick={props.onClick} 
-                disabled={props.disabled}
-                style={props.style}
-            >
-                Insert User
-            </button>
-        </>
-    )
-}

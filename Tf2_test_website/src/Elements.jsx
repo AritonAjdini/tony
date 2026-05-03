@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export const RegExValidInputs = {
-    username: /^[a-z0-9_-]{3,16}$/,
+    username: /^[a-zA-Z0-9_-]{3,16}$/, 
     steamIdentification: /^[0-9]{17}$/,
 }
 

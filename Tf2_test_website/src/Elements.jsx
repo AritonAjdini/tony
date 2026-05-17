@@ -6,12 +6,11 @@ export const RegExValidInputs = {
 }
 
 export const Inputfield = (props) => {
-    // We use a local error state just for the red border/text message
+
     const [localError, setLocalError] = useState('');
 
     const handleInternalChange = (ev) => {
         const val = ev.target.value;
-        
         
         if (props.name === "Username") {
             RegExValidInputs.username.test(val) 
@@ -23,7 +22,6 @@ export const Inputfield = (props) => {
                 : setLocalError("SteamID accepts only number strings of 17 digits!");
         }
 
-        // 2. CRITICAL: Send the data up to the Parent's ChangeOnActions
         props.onChange(ev);
     };
 

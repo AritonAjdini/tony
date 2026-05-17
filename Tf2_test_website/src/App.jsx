@@ -1,88 +1,15 @@
 import "./App.css"
+import { Routes, Route } from "react-router-dom"
 import { Inputfield, RegExValidInputs } from "./Elements"
 import { useState } from "react"
+import { Rows } from "./TableElements"
+import { Database } from "./Database_tf2"
 export const App = () => {
-  const [error, setError] = useState('')
-  const [inpvalues, SetValues] = useState([])
-  const [inputvalue, SetInputValue] = useState({
-    Username: "", SteamID: ""
-  })
-
-const ChangeOnActions = (ev) => {
-    const { name, value } = ev.target;
-
-    SetInputValue((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-
-    const currentData = { ...inputvalue, [name]: value };
-
-    const Booluser = RegExValidInputs.username.test(currentData.Username || "");
-    const Boolid = RegExValidInputs.steamIdentification.test(currentData.SteamID || ""); 
-    
-    const Boolcheck = Booluser && Boolid;
-    
-    setError(Boolcheck);
-};
-
-  const ClickChange = () => {
-    SetValues((prev) => [...prev, inputvalue])
-      SetInputValue({
-      Username: "",
-      SteamID: ""
-    });
-    setError(false);
- }
-
- const Remove = () => {
-  SetValues([])
- }
-
-
-     return (
-    <div className="gridbox">
-      <img src="src/assets/TF2_Icon.svg" className='floating' alt="TF2 Icon" />
-      <div>
-        <div id="inputs">
-          <h1>TF2 User Database</h1>
-          <Inputfield name="Username" type="text" value={inputvalue.Username} onChange={ChangeOnActions}/>
-          <Inputfield name="SteamID" type="text" value={inputvalue.SteamID} onChange={ChangeOnActions}/>
-        </div>
-        <div id="buttons">
-          <button
-            onClick={ClickChange}
-            disabled={!error} 
-            style={{ opacity: !error ? 0.5 : 1, cursor: !error ? 'not-allowed' : 'pointer' }} 
-            className="btn"
-        >Insert Data</button>
-        <button
-            onClick={Remove}
-            disabled={inpvalues.length === 0}
-            style={{ opacity:  (inpvalues.length === 0)? 0.5 : 1, cursor: (inpvalues.length === 0)? 'not-allowed' : 'pointer' }} 
-            className="btn"
-        >Delete All</button>
-        </div>
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th id="firsthd">Name</th>
-            <th id="scndhd">SteamID</th>
-          </tr>
-        </thead>
-        <tbody>
-          {inpvalues.map((item, index) => (
-            <tr key={index}>
-              <td>{item.Username}</td>
-              <td>{item.SteamID}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+ <Routes>
+  <Route elements={}></Route>
+  <Route></Route>
+  <Route></Route>
+ </Routes>
 };
 
 export default App; 

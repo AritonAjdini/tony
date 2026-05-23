@@ -1,4 +1,4 @@
-import "./App.css"
+import styles from "./App.module.css"
 import { Inputfield, RegExValidInputs } from "./Elements"
 import { useState } from "react"
 import { Rows } from "./TableElements"
@@ -41,33 +41,34 @@ const ChangeOnActions = (ev) => {
  }
 
 
-     return (
-    <div className="gridbox">
-      <img src="src/assets/TF2_Icon.svg" className='floating' alt="TF2 Icon" />
+    return (
+    <div className={styles.gridbox}>
+      {/* Changed 'floating' to styles.floating */}
+      <img src="src/assets/TF2_Icon.svg" className={styles.floating} alt="TF2 Icon" />
       <div>
-        <div id="inputs">
+        {/* Changed id="inputs" to className={styles.inputs} for modular safety */}
+        <div className={styles.inputs}>
           <h1>TF2 User Database</h1>
           <Inputfield name="Username" type="text" value={inputvalue.Username} onChange={ChangeOnActions}/>
           <Inputfield name="SteamID" type="text" value={inputvalue.SteamID} onChange={ChangeOnActions}/>
         </div>
-        <div id="buttons">
+        {/* Changed id="buttons" to className={styles.buttons} */}
+        <div className={styles.buttons}>
           <button
             onClick={ClickChange}
             disabled={!error} 
             style={{ opacity: !error ? 0.5 : 1, cursor: !error ? 'not-allowed' : 'pointer' }} 
-            className="btn"
+            className={styles.btn} // Changed "btn" to styles.btn
         >Insert Data</button>
         <button
-            onClick={Remove}
-            disabled={inpvalues.length === 0}
-            style={{ opacity:  (inpvalues.length === 0)? 0.5 : 1, cursor: (inpvalues.length === 0)? 'not-allowed' : 'pointer' }} 
-            className="btn"
+          onClick={Remove}
+          disabled={inpvalues.length === 0}
+          style={{ opacity:  (inpvalues.length === 0)? 0.5 : 1, cursor: (inpvalues.length === 0)? 'not-allowed' : 'pointer' }} 
+          className={styles.btn} // Changed "btn" to styles.btn
         >Delete All</button>
         </div>
       </div>
-      {/*Bëje tabelën krejt si element në vete*/}
       <Rows inpvalues={inpvalues}/>
-      {/*Bëje këtë krejt si element në vete*/}
     </div>
   );
 };

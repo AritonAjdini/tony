@@ -43,3 +43,31 @@ export const Inputfield = (props) => {
     );
 }
 
+export const InputfieldLogin = (props) => {
+    
+    return (
+        <div style={{ padding: '2px' }}>
+            <input
+                name={props.name}
+                type={props.type}
+                value={props.value}
+                onChange={props.OnChange}
+                style={{
+                 border: '2px solid #00ffdd',
+                 padding: '10px 10px',       /* Adds height/breathing room */
+                 fontSize: '24px',           /* Makes the text large */
+                 width: '30rem',              /* Forces it to fill the grid space */
+                 boxSizing: 'border-box',    /* Prevents padding from breaking the layout */
+                 borderRadius: '6px',        /* Clean rounded corners */
+                 backgroundColor: '#fff',    /* Keeps background readable */
+                 display: 'block',
+                 boxShadow: '4px 4px 10px rgba(0,0,0,0.5)',           /* Stack them neatly */
+                 margin: '5px',
+                 outline: 'none',
+            }}
+                placeholder={props.name}
+                className="inpcss"
+            />
+        </div>
+    );
+}

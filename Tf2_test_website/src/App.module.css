@@ -1,3 +1,11 @@
+/* body{
+    background-image: url(assets/Photos/TF2-background.jpg), url(assets/Photos/Yes.jpg);
+    background-size: 1400px 800px;
+    text-align: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+} */
+
 .gridbox{
   position: relative;
   display: grid;
@@ -5,6 +13,11 @@
   size: 100vh;
   height: 100vh;
   align-items: center;
+  background-image: url(assets/Photos/TF2-background.jpg), url(assets/Photos/Yes.jpg);
+  background-size: 1400px 800px;
+  text-align: center;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .floating {
   position: absolute;
@@ -22,12 +35,12 @@
   80%  { top: 50%;  left: 85%; }
   100% { top: 0%; left: -8% }
 }
-img{
+.img{
     width: 400px;
     height: 200px;
 }
-#btn,
-#inputs{
+.btn,
+.inputs{
   position: relative;
   display: block;
   justify-self: center;
@@ -44,10 +57,10 @@ img{
     box-shadow: 2px 3px 10px rgb(3, 44, 37);
     font-size: x-large;
 }
-input::placeholder{
+.input::placeholder{
     padding-left: 1em;
 }
-input:focus{
+.input:focus{
     outline: none;
 }
 .btn{
@@ -71,7 +84,7 @@ input:focus{
     color: rgb(62, 58, 47);
     transform: scale(1.1);
 }
-button::after {
+.button::after {
   content: attr(data-tooltip);
   position: absolute;
   top: 120%;
@@ -89,25 +102,25 @@ button::after {
   white-space: nowrap;
 }
 
-button:hover::after {
+.button:hover::after {
   opacity: 1;
 }
 
-table{
+.table{
   position: relative;
   background-color: rgba(224, 196, 147, 0.596);
   padding: 1%;
   margin-right: 10%
 }
 
-td, th, h1 {
+.td, .th, .h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   letter-spacing: 0.1em;
   color: rgb(255, 174, 0);
   text-shadow: 2px 2px 1px rgba(255, 81, 0, 0.875);
 }
 
-th {
+.th {
   background-color: #f3a048df;
   font-size: xx-large;
   border-bottom: 3px solid rgb(189, 82, 0);
@@ -115,7 +128,7 @@ th {
   position: relative;
 }
 
-td {
+.td {
   font-size: x-large;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #ffce74b3;
@@ -125,14 +138,14 @@ td {
   transition: background-color 0.3s ease;
 }
 
-td:hover, th:hover {
+.td:hover, .th:hover {
   background-color: rgb(245, 198, 112);
 }
 
-#firsthd{
+.firsthd{
   border-top-left-radius: 5%;
 }
-#scndhd{
+.scndhd{
   border-top-right-radius: 5%;
 }
 

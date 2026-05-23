@@ -48,7 +48,7 @@ const [error, SetError] = useState(null)
       value={text.Username} 
       placeholder="Name" 
       className={`${styles.beautifytxt} ${styles.Insert}`} 
-      OnChange={OnChange} 
+      onChange={OnChange} 
     />
     
     {/* Password Input - Fixed comma syntax */}
@@ -57,7 +57,7 @@ const [error, SetError] = useState(null)
       value={text.Password} 
       placeholder="Password" 
       className={`${styles.beautifytxt} ${styles.Insert}`} 
-      OnChange={OnChange} 
+      onChange={OnChange} 
     />
     
     {

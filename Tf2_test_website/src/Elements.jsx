@@ -51,7 +51,7 @@ export const InputfieldLogin = (props) => {
                 name={props.name}
                 type={props.type}
                 value={props.value}
-                onChange={props.OnChange}
+                onChange={props.onChange}
                 style={{
                  border: '2px solid #00ffdd',
                  padding: '10px 10px',       /* Adds height/breathing room */

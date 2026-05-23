@@ -8,23 +8,46 @@ export const Navbar = () => {
   ]
   return (
     <>
-    <h1>TF2 Admin interface</h1>
-    <div>
-      <Link to="/Text">
-        Home
-      </Link>
-    </div>
-    <div>
-      <Link to="/Database">
-        Database
-      </Link>
-    </div>
-    <div>
-      <Link to="/">
-        Log out
-      </Link>
-    </div>
-    <img src="src/assets/TF2_Icon.svg"/>
+   <h1 className={styles.title}>TF2 Admin interface</h1>
+      
+      <nav className={styles.navContainer}>
+        <div>
+          <NavLink 
+            to="/Text" 
+            className={({ isActive }) => 
+              isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
+            }
+          >
+            Home
+          </NavLink>
+        </div>
+
+        <div>
+          <NavLink 
+            to="/Database" 
+            className={({ isActive }) => 
+              isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink
+            }
+          >
+            Database
+          </NavLink>
+        </div>
+
+        <div>
+          <NavLink 
+            to="/" 
+            className={styles.navLink}
+          >
+            Log out
+          </NavLink>
+        </div>
+      </nav>
+
+      <img 
+        src="src/assets/TF2_Icon.svg" 
+        alt="TF2 Icon" 
+        className={styles.logo}
+      />
     </>
-  )
-}
+  );
+};

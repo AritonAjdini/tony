@@ -40,20 +40,20 @@ const ChangeOnActions = (ev) => {
   SetValues([])
  }
 
-
     return (
+    
     <div className={styles.gridbox}>
       {/* Changed 'floating' to styles.floating */}
-      <img src="src/assets/TF2_Icon.svg" className={styles.floating} alt="TF2 Icon" />
+      <img src="./src/assets/TF2_Icon.svg" className={styles.floating} alt="TF2 Icon" />
       <div>
         {/* Changed id="inputs" to className={styles.inputs} for modular safety */}
         <div className={styles.inputs}>
           <h1>TF2 User Database</h1>
-          <Inputfield name="Username" type="text" value={inputvalue.Username} onChange={ChangeOnActions}/>
-          <Inputfield name="SteamID" type="text" value={inputvalue.SteamID} onChange={ChangeOnActions}/>
+          <Inputfield className={styles.inpcss} name="Username" type="text" value={inputvalue.Username} onChange={ChangeOnActions}/>
+          <Inputfield className={styles.inpcss} name="SteamID" type="text" value={inputvalue.SteamID} onChange={ChangeOnActions}/>
         </div>
         {/* Changed id="buttons" to className={styles.buttons} */}
-        <div className={styles.buttons}>
+        <div className={styles.button}>
           <button
             onClick={ClickChange}
             disabled={!error} 

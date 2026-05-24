@@ -4,6 +4,8 @@ import { Navbar } from "./Navigation.jsx";
 import { LoginForm } from "./Login.jsx"; 
 import { Database } from "./Database_tf2.jsx";
 import { TextBase } from "./Text.jsx"; 
+import { CardDesc } from "./CardsDescription.jsx"
+import { Footer } from "./Footer.jsx"
 
 export const App = () => {
   const location = useLocation();
@@ -12,12 +14,13 @@ export const App = () => {
     <>
       {/* Logic: Show Navbar if we are NOT on the login page */}
       {location.pathname !== '/' && <Navbar />}
-
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/Database" element={<Database />} />
         <Route path="/Text" element={<TextBase />} />
+        <Route path="/Text/:id" element={<CardDesc />}/>
       </Routes>
+      {location.pathname !== '/' && <Footer/>}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import styles from"./App.module.css";
 import { useEffect, useState } from "react"
+import { CardsDetail } from "./Cards"
 
 export const TextBase = () => { // Capitalize component names!
     const [data, SetData] = useState([])
@@ -17,16 +18,18 @@ export const TextBase = () => { // Capitalize component names!
             <h1>Loading.....</h1>
         )
     }
+    let count = 0
+    const increment=()=>{
+        count=count+1;
+    }
 
     return (
-        <>
-            {data.map((product) => {
+        <div className={styles.gridbox}>
+            {data.slice(0,3).map((product) => {
                 return (
-                    // 1. Add a key
-                    // 2. Access a specific property like .title
-                    <p key={product.id}>{product.title}</p> 
+                    <CardsDetail key={product.id} product={product}/>
                 )
             })}
-        </>
+        </div>
     )
 }

@@ -8,9 +8,15 @@ export const Navbar = () => {
   ]
   return (
     <>
-   <h1 className={styles.title}>TF2 Admin interface</h1>
+      <div className={styles.HeaderContainer}>
+        <NavLink className={styles.title}
+            to="/Text">
+          TF2 Admin interface
+        </NavLink>
+      </div>
       
       <nav className={styles.navContainer}>
+        
         <div>
           <NavLink 
             to="/Text" 
@@ -41,13 +47,12 @@ export const Navbar = () => {
             Log out
           </NavLink>
         </div>
-      </nav>
-
-      <img 
+        <img 
         src="src/assets/TF2_Icon.svg" 
         alt="TF2 Icon" 
         className={styles.logo}
       />
+      </nav>     
     </>
   );
 };

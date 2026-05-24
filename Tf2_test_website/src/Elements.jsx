@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import styles from "./App.module.css"
 export const RegExValidInputs = {
     username: /^[a-zA-Z0-9_ -]{3,16}$/, 
     steamIdentification: /^[0-9]{17}$/,
@@ -34,6 +34,16 @@ export const Inputfield = (props) => {
                 onChange={handleInternalChange}
                 style={{
                     border: localError ? '2px solid #ff0000' : '2px solid #2efa00',
+                    padding: '10px 10px',       /* Adds height/breathing room */
+                    fontSize: '24px',           /* Makes the text large */
+                    width: '30rem',              /* Forces it to fill the grid space */
+                    boxSizing: 'border-box',    /* Prevents padding from breaking the layout */
+                    borderRadius: '6px',        /* Clean rounded corners */
+                    backgroundColor: '#fff',    /* Keeps background readable */
+                    display: 'block',
+                    boxShadow: '4px 4px 10px rgba(0,0,0,0.5)',           /* Stack them neatly */
+                    margin: '5px',
+                    outline: 'none',
                 }}
                 placeholder={props.name}
                 className="inpcss"
@@ -54,7 +64,7 @@ export const InputfieldLogin = (props) => {
                 onChange={props.onChange}
                 style={{
                  border: '2px solid #00ffdd',
-                 padding: '10px 10px',       /* Adds height/breathing room */
+                 padding: '25px 10px',       /* Adds height/breathing room */
                  fontSize: '24px',           /* Makes the text large */
                  width: '30rem',              /* Forces it to fill the grid space */
                  boxSizing: 'border-box',    /* Prevents padding from breaking the layout */
@@ -66,7 +76,7 @@ export const InputfieldLogin = (props) => {
                  outline: 'none',
             }}
                 placeholder={props.name}
-                className="inpcss"
+                className={styles.inpcss}
             />
         </div>
     );

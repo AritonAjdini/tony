@@ -1,7 +1,7 @@
 import styles from "./App.module.css"
 export const Rows = ({inpvalues}) =>{
     return (
-        <>
+        <div className={styles.tableContainer}>
         <table>
         <thead>
           <tr>
@@ -18,6 +18,7 @@ export const Rows = ({inpvalues}) =>{
           ))}
         </tbody>
         </table>
-        </>
+        </div>
     )
+    
 }
